@@ -1,17 +1,14 @@
 import React from 'react';
 import type { FC } from 'react';
 import { Link } from 'gatsby';
-import { Header } from '../components/header';
-import { Footer } from '../components/footer';
+import { Layout } from '../components/layout';
 
 const Page: FC = () => (
-  <div>
-    <Header />
+  <Layout>
     <h1>Home</h1>
     <p>Hello, Gatsby.js!</p>
     <Link to="/about">About this blog</Link>
-    <Footer />
-  </div>
+  </Layout>
 );
 
 export default Page;
