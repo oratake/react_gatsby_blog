@@ -7,6 +7,15 @@ const config: GatsbyConfig = {
     description: 'Example blog using GatsbyJS',
     email: 'example@example.com'
   },
-  plugins: ['gatsby-plugin-sass']
+  plugins: [
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        fileName: 'types/graphql-types.d.ts',
+        documentPaths: ['src/**/*.{ts,tsx}', 'gatsby-*.ts']
+      }
+    }
+  ]
 };
 export default config;

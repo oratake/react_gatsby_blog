@@ -509,4 +509,6 @@ FodyWeavers.xsd
 .idea/
 *.sln.iml
 
-
+### User Setting
+# gatsby-plugin-graphql-codegen
+types/graphql-types.d.ts
