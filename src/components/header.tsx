@@ -1,11 +1,23 @@
 import React from 'react';
 import type { FC } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
-export const Header: FC = () => (
-  <header>
-    <h1>
-      <Link to="/">My blog</Link>
-    </h1>
-  </header>
-);
+export const Header: FC = () => {
+  const data = useStaticQuery(graphql`
+    query HeaderComponent {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  return (
+    <header>
+      <h1>
+        <Link to="/">{data.site.siteMetadata.title}</Link>
+      </h1>
+    </header>
+  );
+};
