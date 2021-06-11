@@ -9,13 +9,7 @@ const config: GatsbyConfig = {
   },
   plugins: [
     'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-graphql-codegen',
-      options: {
-        fileName: 'types/graphql-types.d.ts',
-        documentPaths: ['src/**/*.{ts,tsx}', 'gatsby-*.ts']
-      }
-    }
+    'gatsby-plugin-typegen'
   ]
 };
 export default config;
