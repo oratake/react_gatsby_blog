@@ -1,10 +1,9 @@
 import React from 'react';
 import type { FC } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import type { FooterComponentQuery } from '../../types/graphql-types';
 
 export const Footer: FC = () => {
-  const data = useStaticQuery<FooterComponentQuery>(graphql`
+  const data = useStaticQuery<GatsbyTypes.FooterComponentQuery>(graphql`
     query FooterComponent {
       site {
         siteMetadata {
@@ -23,7 +22,7 @@ export const Footer: FC = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="{`mailto:${data.site?.siteMetadata?.email ?? ''}`}">Contact(dummy address)</a>
+          <a href={`mailto:${data.site?.siteMetadata?.email ?? ''}`}>Contact(dummy address)</a>
         </li>
       </ul>
     </footer>

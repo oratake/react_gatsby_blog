@@ -1,10 +1,9 @@
 import React from 'react';
 import type { FC } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import type { HeaderComponentQuery } from '../../types/graphql-types';
 
 export const Header: FC = () => {
-  const data = useStaticQuery<HeaderComponentQuery>(graphql`
+  const data = useStaticQuery<GatsbyTypes.HeaderComponentQuery>(graphql`
     query HeaderComponent {
       site {
         siteMetadata {
