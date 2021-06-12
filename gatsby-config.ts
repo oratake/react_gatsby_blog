@@ -17,7 +17,8 @@ const config: GatsbyConfig = {
         name: 'articles',
         path: resolve(__dirname, 'articles')
       }
-    }
+    },
+    'gatsby-transformer-remark'
   ]
 };
 export default config;
