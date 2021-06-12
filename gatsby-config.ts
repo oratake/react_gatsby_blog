@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
@@ -9,7 +10,14 @@ const config: GatsbyConfig = {
   },
   plugins: [
     'gatsby-plugin-sass',
-    'gatsby-plugin-typegen'
+    'gatsby-plugin-typegen',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'articles',
+        path: resolve(__dirname, 'articles')
+      }
+    }
   ]
 };
 export default config;
